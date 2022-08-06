@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Lastik_Otel.MusteriListesi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="Auto" Width="Auto" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Label Grid.Row ="0"  Name="lblCount" HorizontalContentAlignment="Right" Content="{Binding ElementName=dgHastaListesi,Path=Items.Count,FallbackValue=0}" Margin="0,8,9,0" HorizontalAlignment="Right" Width="50" Height="30" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+            <TextBox  Grid.Row ="0" x:Name="textBox" HorizontalAlignment="Left" Height="30" Margin="58,9,0,0" VerticalAlignment="Top" Width="150"/>
+        </Grid>
+        
+
+        <DataGrid Grid.Row ="1" Name="dgHastaListesi" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="No" Binding="{Binding MUSTERI_ID}" MinWidth="50"/>
+                <DataGridTextColumn Header="Adı" Binding="{Binding ADI}" MinWidth="180"/>
+                <DataGridTextColumn Header="Soyadı" Binding="{Binding SOYADI}" MinWidth="180"/>
+                <DataGridTextColumn Header="Cep Tel" Binding="{Binding CEP_TEL}"  MinWidth="80"/>
+                <DataGridTextColumn Header="Cep Tel 2" Binding="{Binding CEP_TEL2}"  MinWidth="80"/>
+                <DataGridTextColumn Header="İş Tel" Binding="{Binding IS_TEL}" MinWidth="80"/>
+                <DataGridTextColumn Header="Adres" Binding="{Binding ADRES}" MinWidth="180"/>
+                <DataGridTextColumn Header="Kayıt Tarihi" Binding="{Binding KAYIT_TARIHI,StringFormat=dd.MM.yyyy}" MinWidth="100"/>
+                <DataGridTemplateColumn Header="Düzenle" Width="70">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                           <Button Content="..." Click="Button_Click" FontSize="17" BorderBrush="{x:Null}" Background="#FF6B9CF1"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTemplateColumn Header="Is Default">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <RadioButton Grid.Column="0" Content="Cihaz" Name="rdCihaz" IsChecked="{Binding CIHAZ,NotifyOnSourceUpdated=True,Mode=TwoWay}"/>
+                                <RadioButton Grid.Column="2" Content="Manuel" Name="rdManuel" IsChecked="{Binding MANUEL,NotifyOnSourceUpdated=True,Mode=TwoWay}"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
+

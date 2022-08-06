@@ -1,0 +1,97 @@
+﻿<Window x:Class="Lastik_Otel.EkDosyalar.GenelParametreler" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="Genel Parametreler" Height="510" 
+        Width="780" MaxWidth="780" MinWidth="780" MinHeight="510">
+
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TabItem}">
+                <Setter Property="Height" Value="80" />
+                <Setter Property="Width" Value="300" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="BorderBrush" Value="{x:Null}"/>
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Background" Value="{x:Null}" />
+            </Style>
+            <Style TargetType="{x:Type ListViewItem}">
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="Height" Value="40" />
+                <Setter Property="FontSize" Value="25" />
+            </Style>
+            <Style TargetType="{x:Type GridViewColumnHeader}">
+                <Setter Property="Height" Value="30" />
+            </Style>
+        </Grid.Resources>
+        <TabControl Name="myTabControl">
+            <TabItem Name="tabTip2Deger" Header="Değer Parametreleri" Loaded="tabTip2Deger_Loaded">
+                <Grid Name="grdAna">
+
+                    <ListView x:Name="lstParametre" IsTextSearchEnabled="False" SelectionChanged="listTakvimDetay_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,105">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="False">
+                                <GridViewColumn Header="ID" Width="60" DisplayMemberBinding="{Binding PARAMETRE2_KODU}" />
+                                <GridViewColumn Header="PARAMETRE AÇIKLAMA" Width="570" DisplayMemberBinding="{Binding PARAMETRE2_ACIKLAMA}" />
+                                <GridViewColumn Header="DEĞER" Width="120" DisplayMemberBinding="{Binding PARAMETRE_DEGER}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+
+
+                    <Button Name="btnDuzenle" Content="DÜZENLE" Margin="0,0,10,10" BorderBrush="Black" FontSize="16" Background="{x:Null}" Click="btnDuzenle_Click" Height="90" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="90" />
+                    <Label Content="Parametre Açıklama" HorizontalAlignment="Left" Height="32" Margin="10,0,0,63" VerticalAlignment="Bottom" Width="135" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="14" />
+                    <Label Content="Parametre Değer" HorizontalAlignment="Left" Margin="10,0,0,19.8" Width="135" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="14" Height="30" VerticalAlignment="Bottom" />
+                    <TextBox Name="txtAciklama" HorizontalAlignment="Left" Height="32" Margin="160,0,0,66.6" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="321" VerticalContentAlignment="Center" IsEnabled="False" />
+                    <TextBox Name="txtDeger" HorizontalAlignment="Left" Margin="160,0,0,19.8" TextWrapping="Wrap" Width="110" VerticalContentAlignment="Center" IsEnabled="False" Height="30" VerticalAlignment="Bottom" />
+                </Grid>
+            </TabItem>
+            
+            <TabItem Name="tabTip1Checkbox" Header="Durum Parametreleri" Loaded="tabTip1Checkbox_Loaded" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Grid>
+                    <ListView x:Name="lstParametreTip1CheckBox" Margin="10" IsTextSearchEnabled="False" SelectionChanged="listTakvimDetay_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="False">
+                                <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding PARAMETRE2_KODU}" />
+                                <GridViewColumn Header="PARAMETRE AÇIKLAMA" Width="555" DisplayMemberBinding="{Binding PARAMETRE2_ACIKLAMA}" />
+                                <GridViewColumn Header="DURUM" Width="80">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox Name="chPrmDurum" Checked="chPrmDurum_Checked" Unchecked="chPrmDurum_Unchecked">
+                                                <CheckBox.Style>
+                                                    <Style TargetType="{x:Type CheckBox}">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding PARAMETRE_DURUM}" Value="0">
+                                                                <Setter Property="IsChecked" Value="False" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding PARAMETRE_DURUM}" Value="1">
+                                                                <Setter Property="IsChecked" Value="True" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding PARAMETRE_DURUM}" Value="{x:Null}">
+                                                                <Setter Property="IsChecked" Value="False" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </CheckBox.Style>
+                                            </CheckBox>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+
+                </Grid>
+            </TabItem>
+            
+            
+
+        </TabControl>
+    </Grid>
+
+
+</Window>
