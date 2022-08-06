@@ -256,6 +256,10 @@
     </Content>
     <Resource Include="Resources\image.jpg" />
     <Resource Include="Resources\ToDo List.txt" />
+    <Resource Include="Photos\AnaEkran.png" />
+    <Resource Include="Photos\IslemListesi.PNG" />
+    <Resource Include="Photos\MusteriGetir.png" />
+    <Resource Include="Photos\YeniIslem.png" />
     <Content Include="tr\DevExpress.Charts.Designer.v16.1.resources.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -505,16 +509,10 @@
     <Content Include="tr\DevExpress.XtraWizard.v16.1.resources.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Setups\NDP452-KB2901907-x86-x64-AllOS-ENU.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Versiyon.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Lastik Otel.jpg" />
-    <Content Include="Setups\AccessDatabaseEngine.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Resources\Icon.ico" />
     <Resource Include="Resources\Icon.jpg" />
     <Content Include="Extensions\Wpf.SplitButton.dll" />
