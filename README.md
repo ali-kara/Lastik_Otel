@@ -1,4 +1,4 @@
-# 2017 #
+## Developed in 2017 ##
 
 Lastik değişimi ve otel hizmeti verilen firmalarda kullanılabilecek bir takip yazılımıdır.
   * Yeni müşteri kayıt ve işlem kabulü yapılabilmektedir.
@@ -8,7 +8,8 @@ Lastik değişimi ve otel hizmeti verilen firmalarda kullanılabilecek bir takip
 Proje;
   C# - WPF ile geliştirilmiştir. 
   Veritabanı olarak masaüstü yazılımı olması ve mobilite ihtiyacı sebebiyle MS Access seçilmiştir.
-  Raporlama ve listeleme işlemleri için DevExpress kontrolleri kullanılmıştır. 
+  Raporlama ve listeleme işlemleri için DevExpress kontrolleri kullanılmıştır.
+  WPF SplitButton kontrolü kullanılmıştır.
   ORM olarak klasik SQL sorguları kullanılmıştır.
   
   
